@@ -1,16 +1,16 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 28
-
-
 
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
-
+        multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }
@@ -29,11 +29,11 @@ android {
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.android.support:appcompat-v7:28.0.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+//    implementation fileTree(include: ['*.jar'], dir: 'libs')
+//    implementation 'com.android.support:appcompat-v7:28.0.0'
+//    testImplementation 'junit:junit:4.12'
+//    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+//    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     //----------------------
     //事件传递
     implementation 'org.greenrobot:eventbus:3.1.1'
@@ -63,13 +63,11 @@ dependencies {
     implementation 'com.github.rubensousa:gravitysnaphelper-compat:2.0'
     implementation 'jp.wasabeef:recyclerview-animators:2.3.0'
     implementation 'com.contrarywind:Android-PickerView:4.1.7'
-    implementation 'com.github.QuadFlask:colorpicker:0.0.13'
     implementation 'de.hdodenhof:circleimageview:3.0.0'
     implementation 'com.githang:status-bar-compat:0.7'
     //viewPager转场效果
     implementation 'com.ToxicBakery.viewpager.transforms:view-pager-transforms:2.0.24'
     implementation 'com.eftimoff:android-pathview:1.0.8@aar'
-    implementation files('src/main/libs/easyandroidanimationslibrary-v0.5.jar')
     //转场库
     implementation 'com.andkulikov:transitionseverywhere:1.6.5'
     implementation 'me.yokeyword:fragmentation:1.3.6'
@@ -80,5 +78,4 @@ dependencies {
     //倾斜TextView
     implementation 'com.haozhang.libary:android-slanted-textview:1.2'
     implementation 'org.sufficientlysecure:html-textview:3.6'
-    implementation files('libs/easyandroidanimationslibrary-v0.5.jar')
 }

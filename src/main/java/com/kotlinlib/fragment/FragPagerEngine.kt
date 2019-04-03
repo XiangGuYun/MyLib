@@ -42,7 +42,11 @@ class FragPagerEngine {
         fpUtils.addTabLayout(tabLayout,true, isScroll) { tab, index ->
            setTab.invoke(tab,index)
         }
-        tabLayout.addOnTabSelectedListener(object : OnTabSelected {
+        tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabReselected(p0: TabLayout.Tab?) {
+
+            }
+
             override fun onTabUnselected(tab: TabLayout.Tab?) {
                 onUnSelected.invoke(tab!!)
             }

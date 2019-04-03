@@ -18,7 +18,7 @@ import com.kotlinlib.other.*
 import me.yokeyword.fragmentation.SupportActivity
 import org.greenrobot.eventbus.EventBus
 
-abstract class AbstractKotlinActivity : SupportActivity(), BaseInterface {
+abstract class AbstractKotlinActivity : Activity(), BaseInterface {
 
     val ACTIVITY_NAME = "ac_name"
     var startEventBus = false//是否启用EventBus
