@@ -34,7 +34,11 @@ class FragmentationTabUtils<T:SupportFragment> {
             val tab = tabLayout.newTab()//新建
             tabLayout.addTab(setTab.invoke(i, tab))//添加
         }
-        tabLayout.addOnTabSelectedListener(object : OnTabSelected {
+        tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabReselected(p0: TabLayout.Tab?) {
+
+            }
+
             //当Tab选中时
             override fun onTabSelected(tab: TabLayout.Tab?) {
                onSelected.invoke(fu, fragments,tab!!)

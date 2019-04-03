@@ -13,7 +13,6 @@ import android.text.style.ClickableSpan
 import android.view.View
 import android.widget.TextView
 import com.kotlinlib.other.StringUtils
-import kotlinx.android.synthetic.main.activity_new_path.*
 
 /**
  * 文本工具类

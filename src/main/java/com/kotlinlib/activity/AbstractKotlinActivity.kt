@@ -18,7 +18,10 @@ import com.kotlinlib.other.*
 import me.yokeyword.fragmentation.SupportActivity
 import org.greenrobot.eventbus.EventBus
 
-abstract class AbstractKotlinActivity : SupportActivity(), BaseInterface {
+/**
+ * 基类Activity
+ */
+abstract class AbstractKotlinActivity : Activity(), BaseInterface {
 
     val ACTIVITY_NAME = "ac_name"
     var startEventBus = false//是否启用EventBus
@@ -114,6 +117,10 @@ abstract class AbstractKotlinActivity : SupportActivity(), BaseInterface {
         }
     }
 
+    /**
+     * 设置状态栏颜色为黑色，仅对6.0以上版本有效
+     * @param isDark Boolean
+     */
     fun setStatusBarTextBlack(isDark:Boolean) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
             val decor = window.decorView
@@ -151,17 +158,22 @@ abstract class AbstractKotlinActivity : SupportActivity(), BaseInterface {
         }
     }
 
-
-    fun Any.toast(isLong: Boolean=false, pre:String=""){
+    /**
+     * 方便在Activity中弹出Toast
+     * @receiver Any
+     * @param isLong Boolean
+     * @param pre String
+     */
+    fun Any.toast(isLong: Boolean=false, gravity: Int = Gravity.BOTTOM, xOffset:Int=0, yOffset:Int=0){
         if(isLong)
-            Toast.makeText(this@AbstractKotlinActivity, "$pre${this}",
+            Toast.makeText(this@AbstractKotlinActivity, "${this}",
                     Toast.LENGTH_SHORT).apply {
-                setGravity(Gravity.CENTER, 0, 0)
+                setGravity(gravity, xOffset, yOffset)
             }.show()
         else
-            Toast.makeText(this@AbstractKotlinActivity,"$pre${this}",
+            Toast.makeText(this@AbstractKotlinActivity,"${this}",
                     Toast.LENGTH_SHORT).apply {
-                setGravity(Gravity.CENTER, 0, 0)
+                setGravity(gravity, xOffset, yOffset)
             }.show()
     }
 
@@ -194,23 +206,34 @@ abstract class AbstractKotlinActivity : SupportActivity(), BaseInterface {
         window.attributes = attr
     }
 
-    class JsonList<T>{
-        /**
-         * Convert the json string to an object List
-         */
-        fun transList(jsonStr:String): List<T> {
-            return gson.fromJson(jsonStr, object : TypeToken<List<T>>(){}.type) as List<T>
-        }
+    /**
+     * 将JSON字符串转换为JSON对象数组
+     * @param jsonStr String
+     * @return List<T>
+     */
+    fun <T> strToJsonList(jsonStr:String): List<T> {
+        return gson.fromJson(jsonStr, object : TypeToken<List<T>>(){}.type) as List<T>
     }
 
+    /**
+     * 渲染布局
+     * @param id Int
+     * @return View
+     */
     fun inf(id:Int): View {
        return inflater.inflate(id, null)
     }
 
+    /**
+     * 启动Activity
+     */
     inline fun <reified T: Activity> start(){
         startActivity( Intent(this, T::class.java))
     }
 
+    /**
+     * 启动Activity，可带参数
+     */
     inline fun <reified T: Activity> start(vararg pairs:Pair<String,Any>){
         val intent = Intent(this, T::class.java)
         pairs.forEach {

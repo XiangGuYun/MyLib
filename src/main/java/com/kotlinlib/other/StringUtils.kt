@@ -215,35 +215,35 @@ interface StringUtils {
     /**
      * 获取是随机颜色字符串
      */
-    fun getRandColorCode(): String {
-        var r: String
-        var g: String
-        var b: String
-        r = Integer.toHexString(Random.nextInt(256)).toUpperCase()
-        g = Integer.toHexString(Random.nextInt(256)).toUpperCase()
-        b = Integer.toHexString(Random.nextInt(256)).toUpperCase()
+//    fun getRandColorCode(): String {
+//        var r: String
+//        var g: String
+//        var b: String
+//        r = Integer.toHexString(Random.nextInt(256)).toUpperCase()
+//        g = Integer.toHexString(Random.nextInt(256)).toUpperCase()
+//        b = Integer.toHexString(Random.nextInt(256)).toUpperCase()
+//
+//        r = if (r.length == 1) "0$r" else r
+//        g = if (g.length == 1) "0$g" else g
+//        b = if (b.length == 1) "0$b" else b
+//
+//        return r + g + b
+//    }
 
-        r = if (r.length == 1) "0$r" else r
-        g = if (g.length == 1) "0$g" else g
-        b = if (b.length == 1) "0$b" else b
-
-        return r + g + b
-    }
-
-    fun randomColor(): Int {
-        var r: String
-        var g: String
-        var b: String
-        r = Integer.toHexString(Random.nextInt(256)).toUpperCase()
-        g = Integer.toHexString(Random.nextInt(256)).toUpperCase()
-        b = Integer.toHexString(Random.nextInt(256)).toUpperCase()
-
-        r = if (r.length == 1) "0$r" else r
-        g = if (g.length == 1) "0$g" else g
-        b = if (b.length == 1) "0$b" else b
-
-        return Color.parseColor("#${r + g + b}")
-    }
+//    fun randomColor(): Int {
+//        var r: String
+//        var g: String
+//        var b: String
+//        r = Integer.toHexString(Random.nextInt(256)).toUpperCase()
+//        g = Integer.toHexString(Random.nextInt(256)).toUpperCase()
+//        b = Integer.toHexString(Random.nextInt(256)).toUpperCase()
+//
+//        r = if (r.length == 1) "0$r" else r
+//        g = if (g.length == 1) "0$g" else g
+//        b = if (b.length == 1) "0$b" else b
+//
+//        return Color.parseColor("#${r + g + b}")
+//    }
 
     /**
     * 避免不合法字符串转换成int

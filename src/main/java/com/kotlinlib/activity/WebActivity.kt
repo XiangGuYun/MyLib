@@ -39,7 +39,7 @@ import android.widget.FrameLayout
  *
  * }
  */
-class WebActivity : KotlinActivity() {
+class WebActivity : AbstractKotlinActivity() {
 
     protected var webUrl: String? = null
     private var webView: WebView? = null

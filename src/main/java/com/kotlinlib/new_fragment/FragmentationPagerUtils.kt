@@ -69,7 +69,11 @@ class FragmentationPagerUtils<T : SupportFragment> {
         for (i in fragmentList.indices) {
             setTab.invoke(tabLayout.getTabAt(i)!!, i)
         }
-        tabLayout.addOnTabSelectedListener(object : OnTabSelected {
+        tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabReselected(p0: TabLayout.Tab?) {
+
+            }
+
             override fun onTabUnselected(tab: TabLayout.Tab?) {
                 onUnSelected.invoke(tab!!)
             }

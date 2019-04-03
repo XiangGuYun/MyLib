@@ -12,7 +12,6 @@ import android.widget.Toast
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.kotlinlib.activity.AbstractKotlinActivity
-import com.kotlinlib.activity.KotlinActivity
 import com.kotlinlib.other.BaseInterface
 import com.kotlinlib.other.DensityUtils
 import com.kotlinlib.other.LayoutId
@@ -24,8 +23,8 @@ abstract class KotlinFragment:SupportFragment(), BaseInterface{
         lateinit var gson:Gson
     }
 
-    fun getAct(): KotlinActivity {
-        return activity as KotlinActivity
+    fun getAct(): AbstractKotlinActivity {
+        return activity as AbstractKotlinActivity
     }
 
     lateinit var fragView:View
