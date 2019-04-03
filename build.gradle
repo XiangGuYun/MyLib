@@ -29,12 +29,6 @@ android {
 }
 
 dependencies {
-//    implementation fileTree(include: ['*.jar'], dir: 'libs')
-//    implementation 'com.android.support:appcompat-v7:28.0.0'
-//    testImplementation 'junit:junit:4.12'
-//    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-//    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    //----------------------
     //事件传递
     implementation 'org.greenrobot:eventbus:3.1.1'
     //网络图片
@@ -54,28 +48,21 @@ dependencies {
     //6.0权限
     implementation 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar'
     implementation 'com.jakewharton.rxbinding2:rxbinding:2.1.1'
-    //RecyclerView
+    //RecyclerView库
     implementation 'com.yuyh.easyadapter:library:1.0.0'
     //kotlin反射注解支持
     implementation 'com.fasterxml.jackson.module:jackson-module-kotlin:2.9.6'
-    //rv snap
-    //implementation 'com.github.rubensousa:gravitysnaphelper:2.0'
+    //RV吸附库
     implementation 'com.github.rubensousa:gravitysnaphelper-compat:2.0'
+    //RV动画库
     implementation 'jp.wasabeef:recyclerview-animators:2.3.0'
     implementation 'com.contrarywind:Android-PickerView:4.1.7'
-    implementation 'de.hdodenhof:circleimageview:3.0.0'
+    //状态栏
     implementation 'com.githang:status-bar-compat:0.7'
     //viewPager转场效果
     implementation 'com.ToxicBakery.viewpager.transforms:view-pager-transforms:2.0.24'
-    implementation 'com.eftimoff:android-pathview:1.0.8@aar'
-    //转场库
-    implementation 'com.andkulikov:transitionseverywhere:1.6.5'
+    //Fragment管理库
     implementation 'me.yokeyword:fragmentation:1.3.6'
-    //Over-Scroll Support For Android's RecyclerView, ListView, GridView, ScrollView ...
-    implementation 'me.everything:overscroll-decor-android:1.0.4'
     //CircleImageView
     implementation 'de.hdodenhof:circleimageview:3.0.0'
-    //倾斜TextView
-    implementation 'com.haozhang.libary:android-slanted-textview:1.2'
-    implementation 'org.sufficientlysecure:html-textview:3.6'
 }
