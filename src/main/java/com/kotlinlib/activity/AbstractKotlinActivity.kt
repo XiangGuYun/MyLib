@@ -26,6 +26,7 @@ abstract class AbstractKotlinActivity : SupportActivity(), BaseInterface {
     var colorInject:StatusBarColor?=null//状态栏颜色注解
     var orientationInject:Orientation?=null//是否是竖直方向
 
+    //修改了地方
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         "The Current Activity is ${this.javaClass.simpleName}".logD(ACTIVITY_NAME)
